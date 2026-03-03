@@ -161,8 +161,8 @@ export default function ContactForm() {
 
                 <div className="mt-12 text-center text-muted-foreground">
                     <p className="font-bold text-lg">Pod Kasztanem</p>
-                    <p>ul. Wypoczynkowa 7, 72-330 Mrzeżyno</p>
-                    <p className="mt-2">Tel: <span className="text-foreground font-semibold">+48 600 123 456</span></p>
+                    <p>ul. Marynarska 5, 72-330 Mrzeżyno</p>
+                    <p className="mt-2">Tel: <span className="text-foreground font-semibold">+48 694 727 655</span></p>
                     <p>Email: <a href="mailto:kontakt@podkasztanem.pl" className="text-primary hover:underline">kontakt@podkasztanem.pl</a></p>
                 </div>
             </div>

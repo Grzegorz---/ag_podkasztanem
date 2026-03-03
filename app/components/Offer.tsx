@@ -5,26 +5,28 @@ import Link from "next/link";
 
 const offers = [
     {
-        title: "Pokoje 2-os.",
-        price: "150 zł",
-        period: "/doba",
-        description: "Idealne dla par",
-        features: ["Łóżko małżeńskie", "Prywatna łazienka", "WiFi", "TV", "Balkon"],
-    },
-    {
-        title: "Pokoje 3-os.",
-        price: "200 zł",
-        period: "/doba",
-        description: "Dla małych rodzin",
-        features: ["Łóżko małżeńskie + pojedyncze", "Prywatna łazienka", "WiFi", "Lodówka", "Czajnik"],
+        title: "Pokoje Gościnne",
+        price: "110 zł",
+        period: "/osoba",
+        description: "Pokoje 2, 3, 4 i 5-osobowe z łazienkami",
+        features: ["Śniadanie + Obiadokolacja w opcji (75 zł)", "Zniżki dla dzieci do lat 7", "TV i sprzęt plażowy", "Dostęp do lodówek"],
         featured: true,
     },
     {
-        title: "Domki Kempingowe",
-        price: "280 zł",
+        title: "Domek 'Pod Kasztanem'",
+        price: "600 zł",
         period: "/doba",
-        description: "Niezależność i swoboda",
-        features: ["4 miejsca noclegowe", "Aneks kuchenny", "Taras", "Grill", "Blisko placu zabaw"],
+        description: "Nowy drewniany domek całoroczny 2025",
+        features: ["45 m² powierzchni", "2 sypialnie", "Klimatyzacja / Ogrzewanie", "Zmywarka", "Dla 4-6 osób"],
+        featured: false,
+    },
+    {
+        title: "Wyżywienie",
+        price: "75 zł",
+        period: "/dzień",
+        description: "Domowa kuchnia na miejscu",
+        features: ["Śniadanie: bufet szwedzki", "Obiadokolacja: zupa + drugie danie", "Kompot/deser", "Możliwość wykupienia na miejscu"],
+        featured: false,
     },
 ];
 
@@ -35,7 +37,7 @@ export default function Offer() {
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Nasza Oferta</h2>
                     <p className="text-muted-foreground text-lg mb-8">
-                        Wybierz opcję idealną dla swoich potrzeb
+                        Zapoznaj się z naszym cennikiem na sezon 2025.
                     </p>
                 </div>
 
@@ -47,7 +49,7 @@ export default function Offer() {
                         >
                             {offer.featured && (
                                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-sm font-bold px-3 py-1 rounded-full">
-                                    Najczęściej wybierane
+                                    Polecamy
                                 </div>
                             )}
                             <CardHeader className="text-center pb-2">

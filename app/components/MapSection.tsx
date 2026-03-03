@@ -28,26 +28,26 @@ export default function MapSection() {
                             <ul className="space-y-4">
                                 <li className="flex justify-between items-center">
                                     <span className="text-muted-foreground">Plaża</span>
-                                    <span className="font-bold">200 m</span>
+                                    <span className="font-bold">100 m</span>
                                 </li>
                                 <li className="flex justify-between items-center">
-                                    <span className="text-muted-foreground">Port</span>
-                                    <span className="font-bold">500 m</span>
+                                    <span className="text-muted-foreground">Las / Rzeka</span>
+                                    <span className="font-bold">20 m</span>
                                 </li>
                                 <li className="flex justify-between items-center">
                                     <span className="text-muted-foreground">Kołobrzeg</span>
                                     <span className="font-bold">18 km</span>
                                 </li>
                                 <li className="flex justify-between items-center">
-                                    <span className="text-muted-foreground">Sklep</span>
-                                    <span className="font-bold">50 m</span>
+                                    <span className="text-muted-foreground">Trzebiatów</span>
+                                    <span className="font-bold">10 km</span>
                                 </li>
                             </ul>
                         </div>
                         <div className="bg-card p-6 rounded-lg shadow-md border text-left">
                             <h3 className="font-bold text-xl mb-2">Adres</h3>
                             <p className="text-muted-foreground">
-                                ul. Wypoczynkowa 7<br />
+                                ul. Marynarska 5<br />
                                 72-330 Mrzeżyno
                             </p>
                         </div>

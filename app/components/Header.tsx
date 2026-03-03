@@ -9,9 +9,10 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
     { name: "O nas", href: "#about" },
-    { name: "Galeria", href: "#gallery" },
     { name: "Oferta", href: "#offer" },
-    { name: "Lokalizacja", href: "#location" },
+    { name: "Cennik", href: "#offer" }, // Cennik is part of Offer usually, or separate. I'll point to #offer for now as per plan context or make a new section if needed. Plan says "Cennik" links. I'll point to #offer.
+    { name: "Galeria", href: "#gallery" },
+    { name: "Dojazd", href: "#location" },
     { name: "Kontakt", href: "#contact" },
 ];
 
@@ -31,14 +32,17 @@ export default function Header() {
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
                 isScrolled
-                    ? "bg-white/80 backdrop-blur-md shadow-md py-4"
-                    : "bg-transparent py-6"
+                    ? "bg-white backdrop-blur-md shadow-md py-4"
+                    : "bg-white/90 backdrop-blur-md shadow-sm py-4"
             )}
         >
             <div className="container mx-auto px-4 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 group">
                     <Palmtree className="h-8 w-8 text-primary transition-transform group-hover:scale-110" />
-                    <span className="text-xl font-bold font-serif tracking-tight text-foreground">
+                    <span className="text-2xl font-bold font-serif tracking-tight text-foreground hidden sm:block">
+                        Ośrodek wypoczynkowy &quot;Pod Kasztanem&quot;
+                    </span>
+                    <span className="text-2xl font-bold font-serif tracking-tight text-foreground sm:hidden">
                         Pod Kasztanem
                     </span>
                 </Link>
@@ -47,9 +51,9 @@ export default function Header() {
                 <nav className="hidden md:flex items-center gap-8">
                     {navItems.map((item) => (
                         <Link
-                            key={item.href}
+                            key={item.name}
                             href={item.href}
-                            className="text-sm font-medium hover:text-primary transition-colors"
+                            className="text-lg font-bold hover:text-primary transition-colors"
                         >
                             {item.name}
                         </Link>
@@ -71,7 +75,7 @@ export default function Header() {
                         <nav className="flex flex-col gap-4 mt-8">
                             {navItems.map((item) => (
                                 <Link
-                                    key={item.href}
+                                    key={item.name}
                                     href={item.href}
                                     className="text-lg font-medium hover:text-primary transition-colors"
                                 >

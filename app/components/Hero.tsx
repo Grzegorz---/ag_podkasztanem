@@ -24,7 +24,7 @@ export default function Hero() {
             >
                 <div
                     className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: "url('https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=2070&auto=format&fit=crop')" }}
+                    style={{ backgroundImage: "url('/images/IMG-20240512-193547.jpg')" }}
                 />
                 <div className="absolute inset-0 bg-black/40" /> {/* Overlay */}
             </motion.div>
@@ -36,10 +36,10 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-serif mb-6 drop-shadow-lg">
-                        Pod Kasztanem
-                        <span className="block text-2xl md:text-4xl mt-2 font-sans font-light opacity-90">
-                            Spokojny wypoczynek nad Bałtykiem
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-serif mb-6 drop-shadow-lg leading-tight">
+                        Ośrodek wypoczynkowy <br className="hidden md:block" /> w Mrzeżynie
+                        <span className="block text-2xl md:text-3xl mt-4 font-sans font-light opacity-90 italic">
+                            &quot;Wakacje tak jak kiedyś...&quot;
                         </span>
                     </h1>
                 </motion.div>
@@ -50,7 +50,7 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="text-lg md:text-xl mb-8 max-w-2xl mx-auto drop-shadow-md text-gray-100"
                 >
-                    Mrzeżyno - Pokoje i domki kempingowe - 200m od plaży
+                    Pokoje, domki kempingowe i pole namiotowe • 100m od morza
                 </motion.p>
 
                 <motion.div
@@ -59,7 +59,7 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 0.6 }}
                 >
                     <Button size="lg" className="text-lg px-8 py-6 rounded-full shadow-lg hover:scale-105 transition-transform" asChild>
-                        <Link href="#offer">Sprawdź dostępność</Link>
+                        <Link href="#offer">Zobacz ofertę</Link>
                     </Button>
                 </motion.div>
             </div>

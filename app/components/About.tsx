@@ -4,23 +4,23 @@ import { Wifi, ParkingSquare, Utensils, Gamepad2 } from "lucide-react";
 const features = [
     {
         icon: Wifi,
-        title: "Bezpłatne WiFi",
-        description: "Szybki internet dostępny w każdym pokoju i na terenie obiektu.",
+        title: "Lokalizacja",
+        description: "100m od morza i portu, 20m od lasu i rzeki Regi. Idealne miejsce na wypoczynek.",
     },
     {
         icon: ParkingSquare,
-        title: "Parking",
-        description: "Bezpieczne miejsce parkingowe dla wszystkich gości.",
+        title: "Udogodnienia",
+        description: "Parking, sprzęt plażowy (leżaki, parawany), sprzęt sportowy.",
     },
     {
         icon: Utensils,
-        title: "Miejsce na Grill",
-        description: "Zadaszona wiata grillowa do wieczornego biesiadowania.",
+        title: "Wyżywienie",
+        description: "Domowa stołówka na miejscu. Całodzienne wyżywienie w atrakcyjnej cenie.",
     },
     {
         icon: Gamepad2,
-        title: "Plac Zabaw",
-        description: "Huśtawki, piaskownica i trampolina dla najmłodszych.",
+        title: "Dla Dzieci",
+        description: "Plac zabaw, huśtawki, dużo zieleni i bezpieczny teren.",
     },
 ];
 
@@ -33,6 +33,10 @@ export default function About() {
                     <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
                         Zapraszamy do naszego kameralnego ośrodka &quot;Pod Kasztanem&quot;. Oferujemy spokój,
                         bliskość natury i rodzinną atmosferę zaledwie 200 metrów od szerokiej, piaszczystej plaży.
+                        Jako Ośrodek Wypoczynkowy &quot;Pod Kasztanem&quot; dokładamy wszelkich starań, by nasi Goście czerpali zadowolenie i satysfakcję z pobytu u nas.
+                        Ośrodek położony jest w odległości 100 m od morza i portu oraz 20 m od ściany lasu i rzeki Regi.
+                        Oddajemy do Państwa dyspozycji: sprzęt plażowy (parawany, leżaki), sprzęt sportowy (piłki, kometki), plac zabaw oraz grill.
+                        Na terenie ośrodka znajduje się stołówka, w której serwujemy pyszne, domowe posiłki.
                     </p>
                 </div>
 
