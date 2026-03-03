@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, Palmtree } from "lucide-react";
 import { Button } from "@/app/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/app/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/app/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -18,6 +18,7 @@ const navItems = [
 
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -64,25 +65,28 @@ export default function Header() {
                 </nav>
 
                 {/* Mobile Nav */}
-                <Sheet>
+                <Sheet open={isOpen} onOpenChange={setIsOpen}>
                     <SheetTrigger asChild>
-                        <Button variant="ghost" size="icon" className="md:hidden">
+                        <Button variant="ghost" size="icon" className="md:hidden mr-2">
                             <Menu className="h-6 w-6" />
                             <span className="sr-only">Menu</span>
                         </Button>
                     </SheetTrigger>
                     <SheetContent side="right">
+                        <SheetTitle className="sr-only">Menu nawigacyjne</SheetTitle>
+                        <SheetDescription className="sr-only">Nawigacja po stronie Ośrodka wypoczynkowego Pod Kasztanem.</SheetDescription>
                         <nav className="flex flex-col gap-4 mt-8">
                             {navItems.map((item) => (
                                 <Link
                                     key={item.name}
                                     href={item.href}
+                                    onClick={() => setIsOpen(false)}
                                     className="text-lg font-medium hover:text-primary transition-colors"
                                 >
                                     {item.name}
                                 </Link>
                             ))}
-                            <Button asChild className="w-full mt-4">
+                            <Button asChild className="w-full mt-4" onClick={() => setIsOpen(false)}>
                                 <Link href="#contact">Rezerwuj</Link>
                             </Button>
                         </nav>

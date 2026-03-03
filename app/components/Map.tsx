@@ -16,7 +16,7 @@ const DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 export default function Map() {
-    const position: [number, number] = [54.146, 15.291]; // Mrzeżyno approx coords
+    const position: [number, number] = [54.1457699, 15.2888937]; // Mrzeżyno, ul. Marynarska 5
 
     return (
         <MapContainer center={position} zoom={15} scrollWheelZoom={false} className="h-full w-full">
@@ -27,7 +27,7 @@ export default function Map() {
             <Marker position={position}>
                 <Popup>
                     <b>Pod Kasztanem</b><br />
-                    ul. Wypoczynkowa 7<br />
+                    ul. Marynarska 5<br />
                     200m do plaży!
                 </Popup>
             </Marker>
