@@ -24,7 +24,7 @@ export default function Hero() {
             >
                 <div
                     className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: "url('/ag_podkasztanem/images/IMG-20240512-193547.jpg')" }}
+                    style={{ backgroundImage: "url('/images/IMG-20240512-193547.jpg')" }}
                 />
                 <div className="absolute inset-0 bg-black/40" /> {/* Overlay */}
             </motion.div>

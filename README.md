@@ -60,7 +60,6 @@ Aby wdrożyć projekt jako statyczną stronę na GitHub Pages:
 
    const nextConfig: NextConfig = {
      output: 'export',
-     basePath: '/ag_podkasztanem',
      images: { unoptimized: true }, // wymagane dla zoptymalizowanych obrazów next/image w SSG
    };
    export default nextConfig;
