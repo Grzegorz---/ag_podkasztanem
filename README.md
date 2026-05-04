@@ -50,6 +50,70 @@ Po prostu zaimportuj repozytorium Git do Vercel, a projekt zostanie automatyczni
 
 Dla pełnego SSG (Static Export) dodaj w `next.config.ts`: `output: 'export'` i deploy folderu `out`.
 
+### GitHub Pages (Statyczna strona)
+
+Aby wdrożyć projekt jako statyczną stronę na GitHub Pages:
+
+1. W pliku konfiguracyjnym Next.js (`next.config.ts` lub `.js`) włącz opcję eksportu statycznego i (opcjonalnie) zdefiniuj ścieżkę bazową:
+   ```typescript
+   import type { NextConfig } from "next";
+
+   const nextConfig: NextConfig = {
+     output: 'export',
+     basePath: '/ag_podkasztanem',
+     images: { unoptimized: true }, // wymagane dla zoptymalizowanych obrazów next/image w SSG
+   };
+   export default nextConfig;
+   ```
+
+2. Zadeklaruj Workflow **GitHub Actions**. Stwórz w swoim repozytorium plik `.github/workflows/deploy.yml`:
+   ```yaml
+   name: Deploy to GitHub Pages
+
+   on:
+     push:
+       branches: ["main"]
+     workflow_dispatch:
+
+   permissions:
+     contents: read
+     pages: write
+     id-token: write
+
+   jobs:
+     build:
+       runs-on: ubuntu-latest
+       steps:
+         - uses: actions/checkout@v4
+         - name: Setup Node
+           uses: actions/setup-node@v4
+           with:
+             node-version: "20"
+         - name: Install dependencies
+           run: npm install --legacy-peer-deps
+         - name: Build project
+           run: npm run build
+         - name: Upload artifact
+           uses: actions/upload-pages-artifact@v3
+           with:
+             path: ./out
+
+     deploy:
+       environment:
+         name: github-pages
+         url: ${{ steps.deployment.outputs.page_url }}
+       runs-on: ubuntu-latest
+       needs: build
+       steps:
+         - name: Deploy to GitHub Pages
+           id: deployment
+           uses: actions/deploy-pages@v4
+   ```
+
+3. W ustawieniach swojego repozytorium na platformie GitHub przejdź do sekcji **Settings > Pages**. W obszarze **Build and deployment** zmień **Source** na **GitHub Actions**.
+
+4. Każde wepchnięcie ("push") kodu na gałąź `main` automatycznie spowoduje zbudowanie folderu `out` i opublikowanie nowej wersji strony na GitHub Pages.
+
 ## 🎨 Komponenty UI
 
 Projekt wykorzystuje system komponentów **shadcn/ui**. Aby dodać nowe komponenty:
