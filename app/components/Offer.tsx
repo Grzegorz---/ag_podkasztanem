@@ -14,7 +14,7 @@ const offers = [
     },
     {
         title: "Domek 'Pod Kasztanem'",
-        price: "600 zł",
+        price: "500 zł",
         period: "/doba",
         description: "Nowy drewniany domek całoroczny 2025",
         features: ["45 m² powierzchni", "2 sypialnie", "Klimatyzacja / Ogrzewanie", "Zmywarka", "Dla 4-6 osób"],
