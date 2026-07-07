@@ -9,15 +9,15 @@ const offers = [
         price: "od 110 zł",
         period: "/osoba",
         description: "Pokoje 2, 3, 4 i 5-osobowe z łazienkami",
-        features: ["Śniadanie + Obiadokolacja w opcji (75 zł)", "Zniżki dla dzieci do lat 7", "TV i sprzęt plażowy", "Dostęp do lodówek"],
+        features: ["Śniadanie + obiadokolacja w opcji (75 zł)", "Zniżki dla dzieci do lat 7", "Sprzęt plażowy", "TV, lodówka, czajnik elektryczny", "Dostęp do WiFi", "Parking", "Teren rekreacyjny z altanką i grillem", "Smaczne posiłki przygotowywane na miejscu"],
         featured: true,
     },
     {
         title: "Domek 'Pod Kasztanem'",
         price: "od 650 zł",
         period: "/doba",
-        description: "Nowy drewniany domek całoroczny 2025",
-        features: ["45 m² powierzchni", "2 sypialnie", "Klimatyzacja / Ogrzewanie", "Zmywarka", "Dla 4-6 osób"],
+        description: "Nowy drewniany domek całoroczny [2025]",
+        features: ["45 m² powierzchni", "salon z aneksem kuchennym", "główna sypialnia z łożem małżeńskim", "druga sypialnia z dwoma łóżkami pojedynczymi", "Wyposażona łazienka z ogrzewaniem podłogowym", "Taras z meblami ogrodowymi", "Klimatyzacja", "Ogrzewanie", "TV 55'", "W pełni wyposaony aneks kuchenny: płyta indukcyjna, zmywarka, lodówka, mikrofala, duży zestaw naczyń kuchennych", "Czajnik elektryczny", "Dostęp do WiFi", "Dla 4-6 osób", "Parking"],
         featured: false,
     },
     {
