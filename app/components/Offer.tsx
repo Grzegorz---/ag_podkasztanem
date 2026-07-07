@@ -6,7 +6,7 @@ import Link from "next/link";
 const offers = [
     {
         title: "Pokoje Gościnne",
-        price: "110 zł",
+        price: "od 110 zł",
         period: "/osoba",
         description: "Pokoje 2, 3, 4 i 5-osobowe z łazienkami",
         features: ["Śniadanie + Obiadokolacja w opcji (75 zł)", "Zniżki dla dzieci do lat 7", "TV i sprzęt plażowy", "Dostęp do lodówek"],
@@ -14,7 +14,7 @@ const offers = [
     },
     {
         title: "Domek 'Pod Kasztanem'",
-        price: "500 zł",
+        price: "od 650 zł",
         period: "/doba",
         description: "Nowy drewniany domek całoroczny 2025",
         features: ["45 m² powierzchni", "2 sypialnie", "Klimatyzacja / Ogrzewanie", "Zmywarka", "Dla 4-6 osób"],
@@ -22,10 +22,18 @@ const offers = [
     },
     {
         title: "Wyżywienie",
-        price: "75 zł",
-        period: "/dzień",
-        description: "Domowa kuchnia na miejscu",
+        price: "80 zł",
+        period: "/dziennie",
+        description: "Domowa kuchnia - zrónicowane menu - smaczne dania",
         features: ["Śniadanie: bufet szwedzki", "Obiadokolacja: zupa + drugie danie", "Kompot/deser", "Możliwość wykupienia na miejscu"],
+        featured: false,
+    },
+    {
+        title: "Śniadania",
+        price: "30 zł",
+        period: "/dziennie",
+        description: "Bogaty wybór dań na początek dnia",
+        features: ["Bufet szwedzki", "Kawa/herbata"],
         featured: false,
     },
 ];
@@ -37,7 +45,7 @@ export default function Offer() {
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Nasza Oferta</h2>
                     <p className="text-muted-foreground text-lg mb-8">
-                        Zapoznaj się z naszym cennikiem na sezon 2025.
+                        Cennik na sezon letni 2026:
                     </p>
                 </div>
 
