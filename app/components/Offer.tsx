@@ -6,7 +6,7 @@ import Link from "next/link";
 const offers = [
     {
         title: "Pokoje Gościnne",
-        price: "od 110 zł",
+        price: "od 120 zł",
         period: "/osoba",
         description: "Pokoje 2, 3, 4 i 5-osobowe z łazienkami",
         features: ["Śniadanie + obiadokolacja w opcji (75 zł)", "Zniżki dla dzieci do lat 7", "Sprzęt plażowy", "TV, lodówka, czajnik elektryczny", "Dostęp do WiFi", "Parking", "Teren rekreacyjny z altanką i grillem", "Smaczne posiłki przygotowywane na miejscu"],
@@ -30,7 +30,7 @@ const offers = [
     },
     {
         title: "Śniadania",
-        price: "30 zł",
+        price: "35 zł",
         period: "/dziennie",
         description: "Bogaty wybór dań na początek dnia",
         features: ["Bufet szwedzki", "Kawa/herbata"],
