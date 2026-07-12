@@ -11,6 +11,7 @@ import {
     CarouselItem,
     CarouselNext,
     CarouselPrevious,
+    type CarouselApi,
 } from "@/app/components/ui/carousel";
 import { Card, CardContent } from "@/app/components/ui/card";
 import AutoScroll from "embla-carousel-auto-scroll";
@@ -43,7 +44,7 @@ const images = [
 
 export default function Gallery() {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
-    const [api, setApi] = useState<any>();
+    const [api, setApi] = useState<CarouselApi>();
 
     return (
         <section id="gallery" className="py-4 md:py-6 bg-muted/30">
