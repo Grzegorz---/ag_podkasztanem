@@ -13,6 +13,7 @@ import {
     CarouselPrevious,
 } from "@/app/components/ui/carousel";
 import { Card, CardContent } from "@/app/components/ui/card";
+import AutoScroll from "embla-carousel-auto-scroll";
 
 const images = [
     "/images/IMG-20240512-193547.jpg",
@@ -42,46 +43,84 @@ const images = [
 
 export default function Gallery() {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
+    const [api, setApi] = useState<any>();
 
     return (
-        <section id="gallery" className="py-20 bg-muted/30">
+        <section id="gallery" className="py-4 md:py-6 bg-muted/30">
             <div className="container mx-auto px-4">
-                <div className="text-center mb-12">
+                <div className="text-center mb-8 relative z-20">
                     <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Galeria</h2>
                     <p className="text-muted-foreground text-lg">
                         Zobacz jak wygląda wypoczynek w Mrzeżynie
                     </p>
                 </div>
 
-                <Carousel className="w-full max-w-7xl mx-auto">
-                    <CarouselContent className="-ml-2 md:-ml-4">
-                        {images.map((src, index) => (
-                            <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                                <div className="p-1">
-                                    <Card className="overflow-hidden border-0 shadow-md hover:shadow-xl transition-all">
-                                        <CardContent className="flex aspect-[4/3] items-center justify-center p-0 relative group">
-                                            <Image
-                                                src={src}
-                                                alt={`Zdjęcie ${index + 1}`}
-                                                fill
-                                                className="object-cover transition-transform duration-500 group-hover:scale-110"
-                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                            />
-                                            <div
-                                                className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center cursor-pointer"
-                                                onClick={() => setSelectedImage(src)}
-                                            >
-                                                <ZoomIn className="w-12 h-12 text-white" />
-                                            </div>
-                                        </CardContent>
-                                    </Card>
-                                </div>
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                    <CarouselPrevious />
-                    <CarouselNext />
-                </Carousel>
+                <div className="py-12 md:py-16">
+                    <Carousel
+                        setApi={setApi}
+                        className="w-full max-w-7xl mx-auto -my-12 md:-my-16"
+                        opts={{ loop: true }}
+                        plugins={[
+                            AutoScroll({
+                                speed: 1,
+                                stopOnInteraction: false,
+                                stopOnMouseEnter: false,
+                            })
+                        ]}
+                    >
+                        <CarouselContent className="-ml-2 md:-ml-4 py-12 md:py-16">
+                            {images.map((src, index) => (
+                                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                                    <div className="p-1 sm:p-2">
+                                        <Card 
+                                            className="overflow-hidden border-2 border-transparent hover:border-black rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 hover:scale-[1.25] hover:z-50 relative cursor-pointer group"
+                                            onMouseEnter={() => api?.plugins().autoScroll?.stop()}
+                                            onMouseLeave={() => api?.plugins().autoScroll?.play()}
+                                        >
+                                            <CardContent className="flex aspect-[4/3] items-center justify-center p-0 relative">
+                                                <Image
+                                                    src={src}
+                                                    alt={`Zdjęcie ${index + 1}`}
+                                                    fill
+                                                    className="object-cover transition-transform duration-500"
+                                                    sizes="100vw"
+                                                />
+                                                <div
+                                                    className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center cursor-pointer"
+                                                    onClick={() => setSelectedImage(src)}
+                                                >
+                                                    <ZoomIn className="w-12 h-12 text-white" />
+                                                </div>
+                                            </CardContent>
+                                        </Card>
+                                    </div>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <CarouselPrevious 
+                            className="left-2 md:left-6 z-[60] bg-white/80 hover:bg-white shadow-md border-0 w-10 h-10 md:w-12 md:h-12"
+                            disabled={false}
+                            onMouseEnter={() => api?.plugins().autoScroll?.stop()}
+                            onMouseLeave={() => api?.plugins().autoScroll?.play()}
+                            onClick={() => {
+                                if (api) {
+                                    api.scrollPrev();
+                                }
+                            }}
+                        />
+                        <CarouselNext 
+                            className="right-2 md:right-6 z-[60] bg-white/80 hover:bg-white shadow-md border-0 w-10 h-10 md:w-12 md:h-12"
+                            disabled={false}
+                            onMouseEnter={() => api?.plugins().autoScroll?.stop()}
+                            onMouseLeave={() => api?.plugins().autoScroll?.play()}
+                            onClick={() => {
+                                if (api) {
+                                    api.scrollNext();
+                                }
+                            }}
+                        />
+                    </Carousel>
+                </div>
             </div>
 
             <AnimatePresence>
@@ -105,7 +144,6 @@ export default function Gallery() {
                             animate={{ scale: 1 }}
                             exit={{ scale: 0.9 }}
                             className="relative w-full h-full max-w-6xl max-h-[90vh]"
-                            onClick={(e) => e.stopPropagation()}
                         >
                             <Image
                                 src={selectedImage}
